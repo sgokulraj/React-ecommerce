@@ -44,6 +44,13 @@
     bottom: 100px;
     right: 100px;
     z-index: 999;
+}
+
+.filterAnimation {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 999;
     animation: zoom 2s ease 0.3s infinite;
 
 }
@@ -79,5 +86,14 @@
         bottom: 50px;
         right: 50px;
         z-index: 999;
+    }
+
+    .filterAnimation {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        z-index: 999;
+        animation: zoom 2s ease 0.3s infinite;
+    
     }
 }

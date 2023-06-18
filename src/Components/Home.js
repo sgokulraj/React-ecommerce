@@ -52,7 +52,7 @@ function Home() {
   };
   return (
     <div className="home">
-      <div className="filterContainer">
+      <div className={(!clicked && "filterAnimation") || "filterContainer"}>
         <FiFilter className="filterbtn" onClick={() => setClicked(!clicked)} />
         {clicked && <Filter />}
       </div>
