@@ -1,0 +1,22 @@
+#gender {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    position: relative;
+    top: 10px;
+    max-width: 500px;
+    min-height: 200px;
+    overflow: auto;
+    margin: 20px auto;
+    padding: 50px 10px;
+    /* border: 1px solid navy; */
+}
+
+#btns {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 50%;
+}
