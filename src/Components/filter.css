@@ -1,25 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.filter{
+.filter {
     background-color: navy;
     color: white;
-    max-height: 90vh;
-    width:15vw;
+    /* max-height: 90vh; */
+    /* width:15vw; */
     padding: 10px;
 }
-@media screen and (max-width : 750px) {
-    .filter{
-        width:20vw;
-    }
-}
+
+
 
 
 @media screen and (max-width : 470px) {
-    .filter{
-        width:30vw;
+    .filter {
+        width:80vw;
+        height:60%;
     }
 }

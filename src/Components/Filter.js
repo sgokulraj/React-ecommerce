@@ -3,7 +3,6 @@ import { CartContext } from "../Context/Context";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Rating from "./Rating";
-
 function Filter() {
   const {
     productState: { byStock, byQuickDelivery, byRating, sort },

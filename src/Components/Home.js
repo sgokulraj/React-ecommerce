@@ -2,6 +2,9 @@ import { CartContext } from "../Context/Context";
 import Filter from "./Filter";
 import SingleProduct from "./SingleProduct";
 import "./home.css";
+import { FiFilter } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Home() {
   const {
@@ -9,7 +12,7 @@ function Home() {
     productState: { byStock, byQuickDelivery, byRating, searchQuery, sort },
   } = CartContext();
 
-
+  const [clicked, setClicked] = useState(false);
   const transformProducts = () => {
     let sortedProducts = product;
     if (sort === "lowToHigh") {
@@ -49,7 +52,10 @@ function Home() {
   };
   return (
     <div className="home">
-      <Filter />
+      <div className="filterContainer">
+        <FiFilter className="filterbtn" onClick={() => setClicked(!clicked)} />
+        {clicked && <Filter />}
+      </div>
       <div className="productContainer">
         {transformProducts().map((prod) => (
           <SingleProduct prod={prod} key={prod.id} />

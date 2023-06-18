@@ -1,7 +1,6 @@
 import { ListGroup, Row, Col, Image, Form } from "react-bootstrap";
 import { CartContext } from "../Context/Context";
 import { MdDelete } from "react-icons/md";
-import  Footer  from "./Footer";
 import { useState, useEffect } from "react";
 import {Button} from "react-bootstrap";
 import "./cart.css";
@@ -20,7 +19,7 @@ function Cart() {
   }, [cart]);
   return (
     <div className="cartContainer">
-      <ListGroup>
+      <ListGroup className="listgroup">
         {cart.map((prod) => {
           return (
             <ListGroup.Item key={prod.id}>

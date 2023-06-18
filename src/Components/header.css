@@ -3,31 +3,50 @@
     padding: 0;
     box-sizing: border-box;
 }
-.header{
+
+.header {
     background-color: navy;
 }
-.title{
+
+.title {
     text-decoration: none;
 }
-.title h2{
-    color:white;
+
+.title h2 {
+    color: white;
 }
 
 .dropDown {
-    width: 300px;
     text-align: center;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.iconContainer{
+    background-color: gold;
+    padding: 8px;
+    border-radius: 10%;
+}
+.userIcon,
+.cartIcon {
+    font-size: 25px;
 }
 
 @media screen and (max-width : 500px) {
-    .dropDown {
-        width: 30v
+    .title h2 {
+        font-size: 18px;
+    }
+
+    .userIcon,
+    .cartIcon {
+        font-size: 15px;
+        
     }
 }
 
 .cartContainer {
     display: flex;
     flex-direction: row;
-    gap: 5px;
     justify-content: space-around;
     align-items: center;
 }

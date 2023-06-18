@@ -35,7 +35,7 @@ function SignIn() {
           window.location.href=`./?ud=${user}`
         })
         .catch((err)=>{
-          console.log(error);
+          setError(err)
         })
     }
   }
