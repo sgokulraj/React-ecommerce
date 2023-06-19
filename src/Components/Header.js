@@ -60,9 +60,10 @@ function Header() {
       <Navbar variant="dark" className="p-3 header">
         <Container style={{ paddingLeft: "5px", paddingRight: "5px" }}>
           <Navbar.Brand style={{ marginRight: "5px" }}>
+            {searchParams.get("ud") !== null ? (
             <Link to={`/?ud=${uid}`} className="title">
               <h2>Shopazon</h2>
-            </Link>
+            </Link>) : <Link to="/" className="title"><h2>Shopazon</h2></Link>}
           </Navbar.Brand>
           <Nav style={{ width: "30%" }}>
             <Form>
