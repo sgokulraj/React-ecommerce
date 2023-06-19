@@ -2,11 +2,12 @@ import "./profile.css";
 import { ref, onValue, update } from "firebase/database";
 import {deleteUser} from "firebase/auth"
 import { auth, db } from "../firebase-config/firebase-config";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Profile() {
   const [searchParams] = useSearchParams();
+  const navigate =useNavigate()
   // const [uid] = useState(searchParams.get("ud"));
   const [disable, setDisable] = useState(true);
   const [user, setUser] = useState({
@@ -58,8 +59,9 @@ function Profile() {
     updates["/users/" + uid] = user;
     update(ref(db), updates);
     alert("Your Profile is Updated :)");
-    window.location.reload();
+    // window.location.reload();
     setDisable(true);
+    navigate(`/profile?ud=${uid}`)
   }
 
   function deleteData(e) {

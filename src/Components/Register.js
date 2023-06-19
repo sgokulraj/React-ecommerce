@@ -1,5 +1,5 @@
 import "./register.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase-config/firebase-config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
@@ -14,6 +14,8 @@ function Register() {
     gender: "",
     address: "",
   });
+
+  const navigate = useNavigate()
 
   function handleform(e) {
     let name = e.currentTarget.name;
@@ -34,7 +36,8 @@ function Register() {
         set(ref(db, "users/" + user), formfields);
         alert("user created successfully");
         setTimeout(() => {
-          window.location.href = "./signin";
+          // window.location.href = "./signin";
+          navigate("/signin")
         }, 3000);
       })
       .catch((error) => {

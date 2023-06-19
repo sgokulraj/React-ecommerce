@@ -3,7 +3,7 @@ import Alert from "react-bootstrap/Alert";
 import { CartContext } from "../Context/Context";
 import Rating from "./Rating";
 import "./singleProduct.css";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 function SingleProduct({ prod }) {
   // console.log(prod);
@@ -13,7 +13,7 @@ function SingleProduct({ prod }) {
   } = CartContext();
 
   const [searchParams] = useSearchParams();
-
+  const navigate = useNavigate();
   return (
     <Card className="cardy">
       <Card.Img variant="top" src={prod.image} alt={prod.id} />
@@ -33,7 +33,9 @@ function SingleProduct({ prod }) {
               onClick={() => {
                 searchParams.get("ud") !== null
                   ? cartDispatch({ type: "REMOVE_FROM_CART", payload: prod })
-                  : (window.location.href = "./signin");
+                  // : (window.location.href = "./signin");
+                  : navigate("/signin");
+
               }}
             >
               Remove from cart{" "}
@@ -44,7 +46,8 @@ function SingleProduct({ prod }) {
               onClick={() => {
                 searchParams.get("ud") !== null
                   ? cartDispatch({ type: "ADD_TO_CART", payload: prod })
-                  : (window.location.href = "./signin");
+                  // : (window.location.href = "./signin");
+                  : navigate("/signin");
               }}
             >
               Add to cart

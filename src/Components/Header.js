@@ -7,7 +7,7 @@ import { Button, Modal, Row, Col, Image } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 import { BsFillCartFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import "./header.css";
 import { CartContext } from "../Context/Context";
 import { auth, db } from "../firebase-config/firebase-config";
@@ -23,6 +23,7 @@ function Header() {
     productDispatch,
   } = CartContext();
 
+  const navigate = useNavigate()
   const [searchParams] = useSearchParams();
   const [uname, setUname] = useState("");
   const [uid] = useState(searchParams.get("ud"));
@@ -197,7 +198,7 @@ function Header() {
                   <Dropdown.Item>
                     Welcome <strong>{uname}</strong>
                   </Dropdown.Item>
-                  <Dropdown.Item href={`./profile?ud=${uid}`}>
+                  <Dropdown.Item onClick={()=> navigate(`/profile?ud=${uid}`)}>
                     View Profile
                   </Dropdown.Item>
                   {/* <Dropdown.Item href={`./userinfo?ud=${uid}`}>View Profile</Dropdown.Item> */}
