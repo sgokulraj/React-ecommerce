@@ -15,6 +15,8 @@ function Register() {
     address: "",
   });
 
+
+  const[err, setErr] = useState("")
   const navigate = useNavigate()
 
   function handleform(e) {
@@ -41,7 +43,7 @@ function Register() {
         }, 3000);
       })
       .catch((error) => {
-        console.log(error);
+        setErr(error.message)
       });
   }
 
@@ -201,7 +203,7 @@ function Register() {
           </div>
         </div>
       </form>
-      <p id="error"></p>
+      <p id="error">{err}</p>
 
       <hr />
       <p>
