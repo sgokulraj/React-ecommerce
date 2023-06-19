@@ -1,0 +1,33 @@
+  * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+       .title{
+        text-align: center;
+        color: black;
+       }
+        .mainCo {
+            position: relative;
+            top: 90px;
+            width: 300px;
+            min-height: 200px;
+            margin: 20px auto;
+            padding: 50px 10px;
+            border: 1px solid navy;
+        }
+
+        #btns {
+            margin: 20px auto;
+            width: 75%;
+        }
+
+        .button{
+            background-color: navy;
+             color: white;  
+        }
+
+        #error {
+            color: red;
+        }
